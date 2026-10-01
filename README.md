@@ -8,6 +8,18 @@ laporan, kelola user, audit log, notifikasi, backup, dan pengaturan.
 Versi **3.0.0** — frontend statis (HTML + CSS + Vanilla JS) yang siap
 dihubungkan ke backend.
 
+## 🔗 Repository & Demo
+
+| | |
+|---|---|
+| 🌐 **Live (GitHub Pages)** | https://b0nz0el.github.io/aquastock-pro/ |
+| 📦 **Repository** | https://github.com/b0nz0el/aquastock-pro |
+| 👤 **Author** | [b0nz0el](https://github.com/b0nz0el) — Mr David |
+| 📄 **License** | MIT © 2026 Mr David |
+
+Deploy otomatis ke GitHub Pages setiap `push` ke branch `main`
+(`.github/workflows/deploy.yml`, publish dari folder `public/`).
+
 ## ✨ Fitur
 
 - 🔐 Login + splash screen, dengan toast notifikasi
