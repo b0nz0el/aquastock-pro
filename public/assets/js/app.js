@@ -96,7 +96,10 @@ document.querySelectorAll('.card').forEach(card => card.classList.add('card-hove
 /* Initial animation */
 setTimeout(animateActivePage, 300);
 
-/* Welcome toast */
-setTimeout(() => showToast('Selamat datang di aQuaStock Pro 3.0', 'success'), 500);
+/* Welcome toast — hanya 1x per session (pindah halaman tidak mengulang) */
+if (!sessionStorage.getItem('welcomeShown')) {
+  sessionStorage.setItem('welcomeShown', 'true');
+  setTimeout(() => showToast('Selamat datang di aQuaStock Pro 3.0', 'success'), 500);
+}
 
 console.log('%c✨ aQuaStock Pro v3.0 — Fully Responsive', 'color: #32ADE6; font-weight: bold; font-size: 14px;');

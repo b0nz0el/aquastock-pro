@@ -47,8 +47,8 @@
     <nav class="flex-1 p-2 overflow-y-auto" aria-label="Menu utama">
 
       <div class="section-title">Utama</div>
-      <button type="button" aria-current="page"
-              class="menu-item active w-full text-left flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium"
+      <button type="button"
+              class="menu-item w-full text-left flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium"
               onclick="showPage('dashboard', this)">
         <i data-lucide="layout-dashboard" class="w-4 h-4" aria-hidden="true"></i> Dashboard
       </button>
@@ -165,7 +165,7 @@
       <div class="hidden md:flex items-center gap-2 text-sm">
         <span class="text-[#A0A0A5]">aQuaStock</span>
         <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-[#A0A0A5]" aria-hidden="true"></i>
-        <span id="breadcrumb" class="font-medium">Dashboard</span>
+        <span id="breadcrumb" class="font-medium"></span>
       </div>
 
       <div class="flex-1 md:max-w-md md:ml-6 relative">
@@ -362,7 +362,7 @@
   <!-- ═══════════ BOTTOM TAB BAR (MOBILE) ═══════════ -->
   <nav class="bottom-nav" aria-label="Navigasi utama">
     <div class="bottom-nav-items">
-      <button type="button" class="bottom-nav-item active" data-tab="dashboard" aria-current="page" onclick="bottomNavTap('dashboard', event)">
+      <button type="button" class="bottom-nav-item" data-tab="dashboard" onclick="bottomNavTap('dashboard', event)">
         <i data-lucide="layout-dashboard" aria-hidden="true"></i>
         <span>Dashboard</span>
       </button>
