@@ -176,14 +176,14 @@
       </div>
 
       <div class="ml-auto flex items-center gap-2">
-        <button aria-label="Notifikasi" class="bg-[#1C1C1E] hover:bg-white/5 p-2.5 rounded-xl relative border border-white/5 transition">
+        <button data-action="notif" aria-label="Notifikasi" class="bg-[#1C1C1E] hover:bg-white/5 p-2.5 rounded-xl relative border border-white/5 transition">
           <i data-lucide="bell" class="w-4 h-4" aria-hidden="true"></i>
           <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-[#FF3B30] rounded-full"></span>
         </button>
-        <button aria-label="Buka di mobile" class="hidden md:block bg-[#1C1C1E] hover:bg-white/5 p-2.5 rounded-xl border border-white/5 transition">
+        <button data-action="mobile-preview" aria-label="Buka di mobile" class="hidden md:block bg-[#1C1C1E] hover:bg-white/5 p-2.5 rounded-xl border border-white/5 transition">
           <i data-lucide="smartphone" class="w-4 h-4" aria-hidden="true"></i>
         </button>
-        <button class="bg-[#0088CC] hover:bg-[#0077BB] px-3 md:px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-lg shadow-[#0088CC]/20 btn">
+        <button data-action="add" class="bg-[#0088CC] hover:bg-[#0077BB] px-3 md:px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-lg shadow-[#0088CC]/20 btn">
           <i data-lucide="plus" class="w-4 h-4" aria-hidden="true"></i>
           <span class="hidden md:inline">Tambah</span>
         </button>
@@ -197,7 +197,7 @@
           <h2 class="text-3xl font-bold tracking-tight">Supplier</h2>
           <p class="text-sm text-[#A0A0A5] mt-1">Daftar supplier & riwayat pembelian</p>
         </div>
-        <button class="bg-[#0088CC] hover:bg-[#0077BB] px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-lg shadow-[#0088CC]/20 btn">
+        <button data-action="add-supplier" class="bg-[#0088CC] hover:bg-[#0077BB] px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-lg shadow-[#0088CC]/20 btn">
           <i data-lucide="plus" class="w-4 h-4" aria-hidden="true"></i> Tambah Supplier
         </button>
       </div>
@@ -223,8 +223,8 @@
             </div>
           </div>
           <div class="mt-4 flex gap-2">
-            <button class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Edit</button>
-            <button class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Detail</button>
+            <button data-action="edit" class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Edit</button>
+            <button data-action="detail" class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Detail</button>
           </div>
         </div>
         <div class="card p-5">
@@ -247,8 +247,8 @@
             </div>
           </div>
           <div class="mt-4 flex gap-2">
-            <button class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Edit</button>
-            <button class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Detail</button>
+            <button data-action="edit" class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Edit</button>
+            <button data-action="detail" class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Detail</button>
           </div>
         </div>
         <div class="card p-5 opacity-60">
@@ -271,8 +271,8 @@
             </div>
           </div>
           <div class="mt-4 flex gap-2">
-            <button class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Edit</button>
-            <button class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Detail</button>
+            <button data-action="edit" class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Edit</button>
+            <button data-action="detail" class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Detail</button>
           </div>
         </div>
       </div>
@@ -311,8 +311,8 @@
 <div id="bulk-bar" class="hidden fixed bottom-[calc(72px+env(safe-area-inset-bottom))] left-4 right-4 bg-[#1C1C1E] border border-white/10 rounded-2xl p-3 shadow-2xl z-50 items-center gap-3" role="region" aria-label="Aksi massal">
   <span class="text-sm font-medium flex-1" id="bulk-count">0 dipilih</span>
   <button onclick="clearSelection()" class="text-xs text-[#A0A0A5] px-3 py-2">Batal</button>
-  <button class="bg-[#0088CC] text-white text-xs font-semibold px-4 py-2 rounded-lg">Edit</button>
-  <button class="bg-[#FF3B30] text-white text-xs font-semibold px-4 py-2 rounded-lg">Hapus</button>
+  <button data-action="edit" class="bg-[#0088CC] text-white text-xs font-semibold px-4 py-2 rounded-lg">Edit</button>
+  <button data-action="delete" class="bg-[#FF3B30] text-white text-xs font-semibold px-4 py-2 rounded-lg">Hapus</button>
 </div>
 
 <!-- ═══════════ TOAST CONTAINER ═══════════ -->
@@ -326,5 +326,6 @@
 <script src="../assets/js/charts.js" defer></script>
 <script src="../assets/js/animations.js" defer></script>
 <script src="../assets/js/app.js" defer></script>
+<script src="../assets/js/mock-actions.js" defer></script>
 </body>
 </html>
