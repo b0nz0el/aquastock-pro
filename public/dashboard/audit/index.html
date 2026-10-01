@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>aQuaStock Pro — Supplier</title>
+<title>aQuaStock Pro — Audit Log</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐠</text></svg>">
 
 <!-- CDN: Tailwind, Lucide, Chart.js -->
@@ -12,11 +12,11 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <!-- Styles -->
-<link rel="stylesheet" href="../assets/css/main.css">
-<link rel="stylesheet" href="../assets/css/components.css">
-<link rel="stylesheet" href="../assets/css/layout.css">
-<link rel="stylesheet" href="../assets/css/pages.css">
-<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../../assets/css/main.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/layout.css">
+<link rel="stylesheet" href="../../assets/css/pages.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
 <body class="bg-black text-white antialiased">
 
@@ -190,90 +190,68 @@
       </div>
     </header>
 
-    <!-- ═══════════ SUPPLIER ═══════════ -->
-    <div id="page-suppliers" class="page active p-6 space-y-5">
+    <!-- ═══════════ AUDIT LOG ═══════════ -->
+    <div id="page-audit" class="page active p-6 space-y-5">
       <div class="flex items-center justify-between">
         <div>
-          <h2 class="text-3xl font-bold tracking-tight">Supplier</h2>
-          <p class="text-sm text-[#A0A0A5] mt-1">Daftar supplier & riwayat pembelian</p>
+          <h2 class="text-3xl font-bold tracking-tight">Audit Log</h2>
+          <p class="text-sm text-[#A0A0A5] mt-1">Riwayat semua aktivitas user di sistem</p>
         </div>
-        <button data-action="add-supplier" class="bg-[#0088CC] hover:bg-[#0077BB] px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-lg shadow-[#0088CC]/20 btn">
-          <i data-lucide="plus" class="w-4 h-4" aria-hidden="true"></i> Tambah Supplier
+        <button data-action="export-audit" class="bg-[#1C1C1E] hover:bg-white/5 px-4 py-2.5 rounded-xl text-sm font-medium border border-white/5 flex items-center gap-2 transition">
+          <i data-lucide="download" class="w-4 h-4" aria-hidden="true"></i> Export
         </button>
       </div>
 
-      <div class="grid grid-cols-3 gap-4">
-        <div class="card p-5">
-          <div class="flex items-start justify-between mb-4">
-            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0088CC] to-[#32ADE6] grid place-items-center">
-              <i data-lucide="factory" class="w-5 h-5 text-white" aria-hidden="true"></i>
-            </div>
-            <span class="badge bg-[#34C759]/15 text-[#34C759]">Aktif</span>
-          </div>
-          <p class="font-semibold text-lg">CV Aqua Teknik</p>
-          <p class="text-xs text-[#A0A0A5] mt-1">Jakarta · 0812-3456-7890</p>
-          <div class="mt-4 pt-4 border-t border-white/5 grid grid-cols-2 gap-3 text-sm">
-            <div>
-              <p class="text-xs text-[#A0A0A5]">Total Beli</p>
-              <p class="font-semibold mt-0.5">Rp 24.5jt</p>
-            </div>
-            <div>
-              <p class="text-xs text-[#A0A0A5]">Transaksi</p>
-              <p class="font-semibold mt-0.5">12</p>
-            </div>
-          </div>
-          <div class="mt-4 flex gap-2">
-            <button data-action="edit" class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Edit</button>
-            <button data-action="detail" class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Detail</button>
-          </div>
-        </div>
-        <div class="card p-5">
-          <div class="flex items-start justify-between mb-4">
-            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#34C759] to-[#28A745] grid place-items-center">
-              <i data-lucide="factory" class="w-5 h-5 text-white" aria-hidden="true"></i>
-            </div>
-            <span class="badge bg-[#34C759]/15 text-[#34C759]">Aktif</span>
-          </div>
-          <p class="font-semibold text-lg">PT Sumber Pakan</p>
-          <p class="text-xs text-[#A0A0A5] mt-1">Bandung · 0813-9876-5432</p>
-          <div class="mt-4 pt-4 border-t border-white/5 grid grid-cols-2 gap-3 text-sm">
-            <div>
-              <p class="text-xs text-[#A0A0A5]">Total Beli</p>
-              <p class="font-semibold mt-0.5">Rp 18.2jt</p>
-            </div>
-            <div>
-              <p class="text-xs text-[#A0A0A5]">Transaksi</p>
-              <p class="font-semibold mt-0.5">8</p>
-            </div>
-          </div>
-          <div class="mt-4 flex gap-2">
-            <button data-action="edit" class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Edit</button>
-            <button data-action="detail" class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Detail</button>
-          </div>
-        </div>
-        <div class="card p-5 opacity-60">
-          <div class="flex items-start justify-between mb-4">
-            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#8E8E93] to-[#636366] grid place-items-center">
-              <i data-lucide="factory" class="w-5 h-5 text-white" aria-hidden="true"></i>
-            </div>
-            <span class="badge bg-[#8E8E93]/15 text-[#A0A0A5]">Nonaktif</span>
-          </div>
-          <p class="font-semibold text-lg">Toko Akuarium Sejahtera</p>
-          <p class="text-xs text-[#A0A0A5] mt-1">Surabaya · 0856-1234-5678</p>
-          <div class="mt-4 pt-4 border-t border-white/5 grid grid-cols-2 gap-3 text-sm">
-            <div>
-              <p class="text-xs text-[#A0A0A5]">Total Beli</p>
-              <p class="font-semibold mt-0.5">Rp 5.4jt</p>
-            </div>
-            <div>
-              <p class="text-xs text-[#A0A0A5]">Transaksi</p>
-              <p class="font-semibold mt-0.5">3</p>
-            </div>
-          </div>
-          <div class="mt-4 flex gap-2">
-            <button data-action="edit" class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Edit</button>
-            <button data-action="detail" class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Detail</button>
-          </div>
+      <div class="card overflow-hidden">
+        <div class="card-table-wrap">
+        <table class="w-full text-sm">
+          <thead class="bg-white/[0.02] border-b border-white/5">
+            <tr class="text-left text-[#A0A0A5]">
+              <th class="px-5 py-3 font-medium text-xs uppercase tracking-wider">Waktu</th>
+              <th class="px-5 py-3 font-medium text-xs uppercase tracking-wider">User</th>
+              <th class="px-5 py-3 font-medium text-xs uppercase tracking-wider">Aksi</th>
+              <th class="px-5 py-3 font-medium text-xs uppercase tracking-wider">Target</th>
+              <th class="px-5 py-3 font-medium text-xs uppercase tracking-wider">IP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-row border-b border-white/5">
+              <td class="px-5 py-3.5 font-mono text-xs text-[#A0A0A5]">30 Sep 14:25:03</td>
+              <td class="px-5 py-3.5">Mr David</td>
+              <td class="px-5 py-3.5"><span class="badge bg-[#34C759]/15 text-[#34C759]">CREATE</span></td>
+              <td class="px-5 py-3.5">Barang "Tesee2"</td>
+              <td class="px-5 py-3.5 text-[#A0A0A5] font-mono text-xs">192.168.1.5</td>
+            </tr>
+            <tr class="table-row border-b border-white/5">
+              <td class="px-5 py-3.5 font-mono text-xs text-[#A0A0A5]">30 Sep 13:12:47</td>
+              <td class="px-5 py-3.5">Staff Satu</td>
+              <td class="px-5 py-3.5"><span class="badge bg-[#0088CC]/15 text-[#32ADE6]">UPDATE</span></td>
+              <td class="px-5 py-3.5">Stok Filter Canister: 4 → 5</td>
+              <td class="px-5 py-3.5 text-[#A0A0A5] font-mono text-xs">192.168.1.8</td>
+            </tr>
+            <tr class="table-row border-b border-white/5">
+              <td class="px-5 py-3.5 font-mono text-xs text-[#A0A0A5]">30 Sep 12:45:22</td>
+              <td class="px-5 py-3.5">Mr David</td>
+              <td class="px-5 py-3.5"><span class="badge bg-[#FF9500]/15 text-[#FF9500]">LOGIN</span></td>
+              <td class="px-5 py-3.5">Device baru (Safari MacBook)</td>
+              <td class="px-5 py-3.5 text-[#A0A0A5] font-mono text-xs">192.168.1.5</td>
+            </tr>
+            <tr class="table-row border-b border-white/5">
+              <td class="px-5 py-3.5 font-mono text-xs text-[#A0A0A5]">30 Sep 11:20:15</td>
+              <td class="px-5 py-3.5">Staff Satu</td>
+              <td class="px-5 py-3.5"><span class="badge bg-[#FF3B30]/15 text-[#FF3B30]">DELETE</span></td>
+              <td class="px-5 py-3.5">Transaksi #TRX-0032 (dibatalkan)</td>
+              <td class="px-5 py-3.5 text-[#A0A0A5] font-mono text-xs">192.168.1.8</td>
+            </tr>
+            <tr class="table-row">
+              <td class="px-5 py-3.5 font-mono text-xs text-[#A0A0A5]">30 Sep 09:15:33</td>
+              <td class="px-5 py-3.5">Follikein</td>
+              <td class="px-5 py-3.5"><span class="badge bg-[#FF9500]/15 text-[#FF9500]">LOGIN</span></td>
+              <td class="px-5 py-3.5">Login berhasil</td>
+              <td class="px-5 py-3.5 text-[#A0A0A5] font-mono text-xs">192.168.1.12</td>
+            </tr>
+          </tbody>
+        </table>
         </div>
       </div>
     </div>
@@ -321,11 +299,11 @@
      role="status" aria-live="polite"></div>
 
 <!-- Scripts (defer agar DOM siap lebih dulu) -->
-<script src="../assets/js/utils.js" defer></script>
-<script src="../assets/js/navigation.js" defer></script>
-<script src="../assets/js/charts.js" defer></script>
-<script src="../assets/js/animations.js" defer></script>
-<script src="../assets/js/app.js" defer></script>
-<script src="../assets/js/mock-actions.js" defer></script>
+<script src="../../assets/js/utils.js" defer></script>
+<script src="../../assets/js/navigation.js" defer></script>
+<script src="../../assets/js/charts.js" defer></script>
+<script src="../../assets/js/animations.js" defer></script>
+<script src="../../assets/js/app.js" defer></script>
+<script src="../../assets/js/mock-actions.js" defer></script>
 </body>
 </html>

@@ -31,23 +31,23 @@ aquastock/
 │   ├── login.html              # Halaman login
 │   ├── 404.html                # Halaman error
 │   │
-│   ├── dashboard/              # 16 halaman aplikasi
-│   │   ├── index.html          # Dashboard
-│   │   ├── items.html          # Barang
-│   │   ├── in.html             # Barang Masuk
-│   │   ├── out.html            # Barang Keluar
-│   │   ├── po.html             # Purchase Order
-│   │   ├── return.html         # Retur
-│   │   ├── suppliers.html      # Supplier
-│   │   ├── customers.html      # Customer
-│   │   ├── cash.html           # Kas & Keuangan
-│   │   ├── debt.html           # Hutang & Piutang
-│   │   ├── report.html         # Laporan
-│   │   ├── users.html          # Kelola User
-│   │   ├── audit.html          # Audit Log
-│   │   ├── notif.html          # Notifikasi
-│   │   ├── backup.html         # Backup
-│   │   └── settings.html       # Settings
+│   ├── dashboard/              # 16 halaman aplikasi (clean URL)
+│   │   ├── index.html          # Dashboard         → /dashboard/
+│   │   ├── items/index.html    # Barang            → /dashboard/items/
+│   │   ├── in/index.html       # Barang Masuk      → /dashboard/in/
+│   │   ├── out/index.html      # Barang Keluar     → /dashboard/out/
+│   │   ├── po/index.html       # Purchase Order    → /dashboard/po/
+│   │   ├── return/index.html   # Retur             → /dashboard/return/
+│   │   ├── suppliers/index.html # Supplier         → /dashboard/suppliers/
+│   │   ├── customers/index.html # Customer         → /dashboard/customers/
+│   │   ├── cash/index.html      # Kas & Keuangan   → /dashboard/cash/
+│   │   ├── debt/index.html      # Hutang & Piutang → /dashboard/debt/
+│   │   ├── report/index.html    # Laporan          → /dashboard/report/
+│   │   ├── users/index.html     # Kelola User      → /dashboard/users/
+│   │   ├── audit/index.html     # Audit Log        → /dashboard/audit/
+│   │   ├── notif/index.html     # Notifikasi       → /dashboard/notif/
+│   │   ├── backup/index.html    # Backup           → /dashboard/backup/
+│   │   └── settings/index.html  # Settings         → /dashboard/settings/
 │   │
 │   └── assets/
 │       ├── css/
@@ -118,8 +118,8 @@ php -S localhost:8000 -t public
 > diblokir browser. Selalu jalankan lewat server lokal di atas.
 
 **Alur:** `public/index.html` → redirect ke `login.html` → setelah login →
-`dashboard/index.html`. Perpindahan antar modul memakai multi-page
-(`showPage()` mengarahkan ke file halaman tujuan).
+`dashboard/`. Perpindahan antar modul memakai **clean URL** (multi-page):
+`showPage('items')` mengarahkan ke `/dashboard/items/` — tanpa ekstensi `.html`.
 
 ## 🧰 Tech Stack
 

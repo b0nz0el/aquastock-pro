@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>aQuaStock Pro — Kelola User</title>
+<title>aQuaStock Pro — Hutang & Piutang</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐠</text></svg>">
 
 <!-- CDN: Tailwind, Lucide, Chart.js -->
@@ -12,11 +12,11 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <!-- Styles -->
-<link rel="stylesheet" href="../assets/css/main.css">
-<link rel="stylesheet" href="../assets/css/components.css">
-<link rel="stylesheet" href="../assets/css/layout.css">
-<link rel="stylesheet" href="../assets/css/pages.css">
-<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../../assets/css/main.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/layout.css">
+<link rel="stylesheet" href="../../assets/css/pages.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
 <body class="bg-black text-white antialiased">
 
@@ -190,121 +190,73 @@
       </div>
     </header>
 
-    <!-- ═══════════ KELOLA USER ═══════════ -->
-    <div id="page-users" class="page active p-6 space-y-5">
-      <div class="flex items-center justify-between">
-        <div>
-          <h2 class="text-3xl font-bold tracking-tight">Kelola User</h2>
-          <p class="text-sm text-[#A0A0A5] mt-1">Atur akses staff, viewer, dan co-owner</p>
-        </div>
-        <div class="flex gap-2 flex-wrap">
-          <button data-action="role-co-owner" class="bg-[#AF52DE] hover:bg-[#9B3DC8] px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-lg shadow-[#AF52DE]/20 btn">
-            <i data-lucide="crown" class="w-4 h-4" aria-hidden="true"></i> Co-Owner
-          </button>
-          <button data-action="role-staff" class="bg-[#34C759] hover:bg-[#28A745] px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-lg shadow-[#34C759]/20 btn">
-            <i data-lucide="user-plus" class="w-4 h-4" aria-hidden="true"></i> Staff
-          </button>
-          <button data-action="role-viewer" class="bg-[#0088CC] hover:bg-[#0077BB] px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-lg shadow-[#0088CC]/20 btn">
-            <i data-lucide="eye" class="w-4 h-4" aria-hidden="true"></i> Viewer
-          </button>
-        </div>
-      </div>
+    <!-- ═══════════ HUTANG PIUTANG ═══════════ -->
+    <div id="page-debt" class="page active p-6 space-y-5">
+      <h2 class="text-3xl font-bold tracking-tight">Hutang & Piutang</h2>
 
-      <div class="grid grid-cols-4 gap-4">
+      <div class="grid grid-cols-2 gap-4">
         <div class="card p-5">
-          <p class="text-xs text-[#A0A0A5] font-medium">Total User</p>
-          <p class="text-2xl font-bold mt-1">8</p>
+          <div class="flex items-center justify-between mb-5">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-[#FF3B30]/15 grid place-items-center">
+                <i data-lucide="trending-down" class="w-5 h-5 text-[#FF3B30]" aria-hidden="true"></i>
+              </div>
+              <h3 class="font-semibold">Hutang ke Supplier</h3>
+            </div>
+            <span class="text-2xl font-bold text-[#FF3B30]">Rp 3.2jt</span>
+          </div>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center justify-between py-3 border-b border-white/5">
+              <div>
+                <p class="font-medium">CV Aqua Teknik</p>
+                <p class="text-xs text-[#A0A0A5] mt-0.5 flex items-center gap-1">
+                  <i data-lucide="calendar" class="w-3 h-3" aria-hidden="true"></i> Jatuh tempo 15 Okt 2026
+                </p>
+              </div>
+              <span class="font-semibold text-[#FF3B30]">Rp 2.1jt</span>
+            </div>
+            <div class="flex items-center justify-between py-3">
+              <div>
+                <p class="font-medium">PT Sumber Pakan</p>
+                <p class="text-xs text-[#A0A0A5] mt-0.5 flex items-center gap-1">
+                  <i data-lucide="calendar" class="w-3 h-3" aria-hidden="true"></i> Jatuh tempo 20 Okt 2026
+                </p>
+              </div>
+              <span class="font-semibold text-[#FF3B30]">Rp 1.1jt</span>
+            </div>
+          </div>
         </div>
-        <div class="card p-5">
-          <p class="text-xs text-[#A0A0A5] font-medium">Aktif</p>
-          <p class="text-2xl font-bold text-[#34C759] mt-1">7</p>
-        </div>
-        <div class="card p-5">
-          <p class="text-xs text-[#A0A0A5] font-medium">Online</p>
-          <p class="text-2xl font-bold text-[#32ADE6] mt-1">3</p>
-        </div>
-        <div class="card p-5">
-          <p class="text-xs text-[#A0A0A5] font-medium">Nonaktif</p>
-          <p class="text-2xl font-bold text-[#A0A0A5] mt-1">1</p>
-        </div>
-      </div>
 
-      <div class="card overflow-hidden">
-        <div class="card-table-wrap">
-        <table class="w-full text-sm">
-          <thead class="bg-white/[0.02] border-b border-white/5">
-            <tr class="text-left text-[#A0A0A5]">
-              <th class="px-5 py-3 font-medium text-xs uppercase tracking-wider">User</th>
-              <th class="px-5 py-3 font-medium text-xs uppercase tracking-wider">Email</th>
-              <th class="px-5 py-3 font-medium text-xs uppercase tracking-wider">Role</th>
-              <th class="px-5 py-3 font-medium text-xs uppercase tracking-wider">Status</th>
-              <th class="px-5 py-3 font-medium text-xs uppercase tracking-wider">Terakhir Login</th>
-              <th class="px-5 py-3 w-32"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="table-row border-b border-white/5">
-              <td class="px-5 py-3.5">
-                <div class="flex items-center gap-3">
-                  <div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#0088CC] to-[#32ADE6] grid place-items-center font-bold text-sm">M</div>
-                  <span class="font-medium">Mr David</span>
-                </div>
-              </td>
-              <td class="px-5 py-3.5 text-[#A0A0A5]">yt.hackrandom@gmail.com</td>
-              <td class="px-5 py-3.5"><span class="badge bg-[#0088CC]/15 text-[#32ADE6]">OWNER</span></td>
-              <td class="px-5 py-3.5"><span class="flex items-center gap-1.5 text-[#34C759]"><span class="w-2 h-2 bg-[#34C759] rounded-full"></span>Aktif</span></td>
-              <td class="px-5 py-3.5 text-[#A0A0A5]">Sekarang</td>
-              <td class="px-5 py-3.5">
-                  <div class="flex gap-1 justify-end">
-                    <button data-action="edit-profile" aria-label="Edit profil" class="p-1.5 hover:bg-white/5 rounded-lg text-[#32ADE6]">
-                      <i data-lucide="pencil" class="w-4 h-4"></i>
-                        </button>
-                          <button data-action="change-password" aria-label="Ganti password" class="p-1.5 hover:bg-white/5 rounded-lg text-[#FF9500]">
-                            <i data-lucide="key" class="w-4 h-4"></i>
-                          </button>
-                  </div>
-            </td>
-            </tr>
-            <tr class="table-row border-b border-white/5">
-              <td class="px-5 py-3.5">
-                <div class="flex items-center gap-3">
-                  <div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#34C759] to-[#28A745] grid place-items-center font-bold text-sm">S</div>
-                  <span class="font-medium">Staff Satu</span>
-                </div>
-              </td>
-              <td class="px-5 py-3.5 text-[#A0A0A5]">staff1@gmail.com</td>
-              <td class="px-5 py-3.5"><span class="badge bg-[#34C759]/15 text-[#34C759]">STAFF</span></td>
-              <td class="px-5 py-3.5"><span class="flex items-center gap-1.5 text-[#34C759]"><span class="w-2 h-2 bg-[#34C759] rounded-full"></span>Aktif</span></td>
-              <td class="px-5 py-3.5 text-[#A0A0A5]">15 menit lalu</td>
-              <td class="px-5 py-3.5">
-                <div class="flex gap-1 justify-end">
-                  <button data-action="edit" aria-label="Edit" class="p-1.5 hover:bg-white/5 rounded-lg text-[#32ADE6]"><i data-lucide="pencil" class="w-4 h-4" aria-hidden="true"></i></button>
-                  <button data-action="suspend" aria-label="Suspend" class="p-1.5 hover:bg-white/5 rounded-lg text-[#FF9500]"><i data-lucide="pause" class="w-4 h-4" aria-hidden="true"></i></button>
-                  <button data-action="delete" aria-label="Hapus" class="p-1.5 hover:bg-white/5 rounded-lg text-[#FF3B30]"><i data-lucide="trash-2" class="w-4 h-4" aria-hidden="true"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr class="table-row">
-              <td class="px-5 py-3.5">
-                <div class="flex items-center gap-3">
-                  <div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#AF52DE] to-[#9B3DC8] grid place-items-center font-bold text-sm">F</div>
-                  <span class="font-medium">Follikein</span>
-                </div>
-              </td>
-              <td class="px-5 py-3.5 text-[#A0A0A5]">follikein@gmail.com</td>
-              <td class="px-5 py-3.5"><span class="badge bg-[#8E8E93]/15 text-[#A0A0A5]">VIEWER</span></td>
-              <td class="px-5 py-3.5"><span class="flex items-center gap-1.5 text-[#34C759]"><span class="w-2 h-2 bg-[#34C759] rounded-full"></span>Aktif</span></td>
-              <td class="px-5 py-3.5 text-[#A0A0A5]">1 jam lalu</td>
-              <td class="px-5 py-3.5">
-                <div class="flex gap-1 justify-end">
-                  <button data-action="edit" aria-label="Edit" class="p-1.5 hover:bg-white/5 rounded-lg text-[#32ADE6]"><i data-lucide="pencil" class="w-4 h-4" aria-hidden="true"></i></button>
-                  <button data-action="suspend" aria-label="Suspend" class="p-1.5 hover:bg-white/5 rounded-lg text-[#FF9500]"><i data-lucide="pause" class="w-4 h-4" aria-hidden="true"></i></button>
-                  <button data-action="delete" aria-label="Hapus" class="p-1.5 hover:bg-white/5 rounded-lg text-[#FF3B30]"><i data-lucide="trash-2" class="w-4 h-4" aria-hidden="true"></i></button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="card p-5">
+          <div class="flex items-center justify-between mb-5">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-[#34C759]/15 grid place-items-center">
+                <i data-lucide="trending-up" class="w-5 h-5 text-[#34C759]" aria-hidden="true"></i>
+              </div>
+              <h3 class="font-semibold">Piutang dari Customer</h3>
+            </div>
+            <span class="text-2xl font-bold text-[#34C759]">Rp 1.8jt</span>
+          </div>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center justify-between py-3 border-b border-white/5">
+              <div>
+                <p class="font-medium">Budi Santoso</p>
+                <p class="text-xs text-[#A0A0A5] mt-0.5 flex items-center gap-1">
+                  <i data-lucide="calendar" class="w-3 h-3" aria-hidden="true"></i> Jatuh tempo 5 Okt 2026
+                </p>
+              </div>
+              <span class="font-semibold text-[#34C759]">Rp 1.2jt</span>
+            </div>
+            <div class="flex items-center justify-between py-3">
+              <div>
+                <p class="font-medium">Siti Nurhaliza</p>
+                <p class="text-xs text-[#A0A0A5] mt-0.5 flex items-center gap-1">
+                  <i data-lucide="calendar" class="w-3 h-3" aria-hidden="true"></i> Jatuh tempo 10 Okt 2026
+                </p>
+              </div>
+              <span class="font-semibold text-[#34C759]">Rp 600rb</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -352,11 +304,11 @@
      role="status" aria-live="polite"></div>
 
 <!-- Scripts (defer agar DOM siap lebih dulu) -->
-<script src="../assets/js/utils.js" defer></script>
-<script src="../assets/js/navigation.js" defer></script>
-<script src="../assets/js/charts.js" defer></script>
-<script src="../assets/js/animations.js" defer></script>
-<script src="../assets/js/app.js" defer></script>
-<script src="../assets/js/mock-actions.js" defer></script>
+<script src="../../assets/js/utils.js" defer></script>
+<script src="../../assets/js/navigation.js" defer></script>
+<script src="../../assets/js/charts.js" defer></script>
+<script src="../../assets/js/animations.js" defer></script>
+<script src="../../assets/js/app.js" defer></script>
+<script src="../../assets/js/mock-actions.js" defer></script>
 </body>
 </html>

@@ -12,23 +12,35 @@ const pageTitles = {
 
 let activeBottomTab = 'dashboard';
 
-/* Peta id halaman → nama file */
-const PAGE_FILES = {
-  dashboard: 'index.html', items: 'items.html', in: 'in.html', out: 'out.html',
-  po: 'po.html', return: 'return.html', suppliers: 'suppliers.html',
-  customers: 'customers.html', cash: 'cash.html', debt: 'debt.html',
-  report: 'report.html', users: 'users.html', audit: 'audit.html',
-  notif: 'notif.html', backup: 'backup.html', settings: 'settings.html'
+/* Peta id halaman → slug folder (clean URL, tanpa .html) */
+const PAGE_SLUGS = {
+  dashboard: '', items: 'items', in: 'in', out: 'out',
+  po: 'po', return: 'return', suppliers: 'suppliers',
+  customers: 'customers', cash: 'cash', debt: 'debt',
+  report: 'report', users: 'users', audit: 'audit',
+  notif: 'notif', backup: 'backup', settings: 'settings'
 };
 
 /* Tab yang tersedia di bottom nav */
 const BOTTOM_TABS = ['dashboard', 'items', 'in', 'out'];
 
-/* Tentukan id halaman dari file yang sedang dibuka */
+/* Basis path folder dashboard, mis. "/aquastock-pro/dashboard/" */
+function dashboardBase() {
+  const path = window.location.pathname;
+  const i = path.indexOf('/dashboard/');
+  if (i !== -1) return path.slice(0, i + '/dashboard/'.length);
+  // fallback: "/dashboard" tanpa garis miring di akhir
+  const j = path.replace(/\/+$/, '').lastIndexOf('/dashboard');
+  if (j !== -1) return path.slice(0, j + '/dashboard'.length) + '/';
+  return './';
+}
+
+/* Tentukan id halaman dari URL saat ini (clean URL) */
 function currentPageId() {
-  const file = (window.location.pathname.split('/').pop() || 'index.html');
-  if (file === '' || file === 'index.html') return 'dashboard';
-  return file.replace(/\.html$/, '');
+  let rest = window.location.pathname.slice(dashboardBase().length);
+  rest = rest.replace(/\.html$/, '').replace(/\/+$/, '');
+  if (!rest) return 'dashboard';
+  return rest.split('/')[0];
 }
 
 /* Set status aktif (sidebar + bottom nav + breadcrumb) sesuai halaman saat ini */
@@ -55,10 +67,15 @@ function syncActiveState() {
   activeBottomTab = tabToActivate;
 }
 
-/* Navigasi: multi-page → arahkan ke file halaman tujuan */
+/* Bangun URL bersih untuk sebuah halaman, mis. "/aquastock-pro/dashboard/items/" */
+function pageUrl(pageId) {
+  const slug = PAGE_SLUGS[pageId] !== undefined ? PAGE_SLUGS[pageId] : pageId;
+  return dashboardBase() + (slug ? slug + '/' : '');
+}
+
+/* Navigasi: multi-page clean URL → arahkan ke /dashboard/<slug>/ */
 function showPage(pageId, element) {
-  const file = PAGE_FILES[pageId] || (pageId + '.html');
-  window.location.href = './' + file;
+  window.location.href = pageUrl(pageId);
 }
 
 function bottomNavTap(tab, event) {

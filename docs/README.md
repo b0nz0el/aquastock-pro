@@ -37,9 +37,10 @@ Semua script dimuat dengan `defer` agar DOM siap lebih dulu.
 
 ## Keputusan refactor (yang perlu diketahui)
 
-1. **Multi-page (Opsi A).** `showPage()` diubah menjadi redirect
-   (`window.location.href = './<file>.html'`). Peta id→file ada di
-   `PAGE_FILES` (`dashboard` → `index.html`).
+1. **Multi-page (Opsi A) dengan clean URL.** `showPage()` mengarahkan ke
+   `/dashboard/<slug>/` (tanpa `.html`) melalui `pageUrl()`. Peta id→slug ada di
+   `PAGE_SLUGS`. `dashboardBase()` mencari basis path `/dashboard/` supaya URL
+   tetap benar baik di root domain maupun di sub-path (GitHub Pages).
 2. **Shell diduplikasi.** Setiap halaman dashboard memuat sidebar/header/
    bottom-nav/bulk-bar/toast yang identik. Status aktif diset saat load oleh
    `syncActiveState()` di `navigation.js` (berdasarkan nama file).

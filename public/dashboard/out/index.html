@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>aQuaStock Pro — Audit Log</title>
+<title>aQuaStock Pro — Barang Keluar</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐠</text></svg>">
 
 <!-- CDN: Tailwind, Lucide, Chart.js -->
@@ -12,11 +12,11 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <!-- Styles -->
-<link rel="stylesheet" href="../assets/css/main.css">
-<link rel="stylesheet" href="../assets/css/components.css">
-<link rel="stylesheet" href="../assets/css/layout.css">
-<link rel="stylesheet" href="../assets/css/pages.css">
-<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../../assets/css/main.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/layout.css">
+<link rel="stylesheet" href="../../assets/css/pages.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
 <body class="bg-black text-white antialiased">
 
@@ -190,16 +190,64 @@
       </div>
     </header>
 
-    <!-- ═══════════ AUDIT LOG ═══════════ -->
-    <div id="page-audit" class="page active p-6 space-y-5">
+    <!-- ═══════════ BARANG KELUAR ═══════════ -->
+    <div id="page-out" class="page active p-6 space-y-5">
       <div class="flex items-center justify-between">
         <div>
-          <h2 class="text-3xl font-bold tracking-tight">Audit Log</h2>
-          <p class="text-sm text-[#A0A0A5] mt-1">Riwayat semua aktivitas user di sistem</p>
+          <h2 class="text-3xl font-bold tracking-tight">Barang Keluar</h2>
+          <p class="text-sm text-[#A0A0A5] mt-1">Riwayat penjualan & pengeluaran barang</p>
         </div>
-        <button data-action="export-audit" class="bg-[#1C1C1E] hover:bg-white/5 px-4 py-2.5 rounded-xl text-sm font-medium border border-white/5 flex items-center gap-2 transition">
-          <i data-lucide="download" class="w-4 h-4" aria-hidden="true"></i> Export
-        </button>
+        <div class="flex gap-2">
+          <button data-action="print" class="bg-[#1C1C1E] hover:bg-white/5 px-4 py-2.5 rounded-xl text-sm font-medium border border-white/5 flex items-center gap-2 transition">
+            <i data-lucide="printer" class="w-4 h-4" aria-hidden="true"></i> Packing List
+          </button>
+          <button data-action="add-out" class="bg-[#0088CC] hover:bg-[#0077BB] px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-lg shadow-[#0088CC]/20 btn">
+            <i data-lucide="plus" class="w-4 h-4" aria-hidden="true"></i> Tambah
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-4 gap-4">
+        <div class="card p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-9 h-9 rounded-lg bg-[#FF3B30]/15 grid place-items-center">
+              <i data-lucide="arrow-up-circle" class="w-4 h-4 text-[#FF3B30]" aria-hidden="true"></i>
+            </div>
+            <span class="text-xs text-[#A0A0A5] font-medium">Hari Ini</span>
+          </div>
+          <p class="text-2xl font-bold text-[#FF3B30]">-5</p>
+          <p class="text-xs text-[#A0A0A5] mt-1">Rp 325rb</p>
+        </div>
+        <div class="card p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-9 h-9 rounded-lg bg-[#FF3B30]/15 grid place-items-center">
+              <i data-lucide="calendar" class="w-4 h-4 text-[#FF3B30]" aria-hidden="true"></i>
+            </div>
+            <span class="text-xs text-[#A0A0A5] font-medium">7 Hari</span>
+          </div>
+          <p class="text-2xl font-bold text-[#FF3B30]">-28</p>
+          <p class="text-xs text-[#A0A0A5] mt-1">Rp 4.2jt</p>
+        </div>
+        <div class="card p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-9 h-9 rounded-lg bg-[#FF3B30]/15 grid place-items-center">
+              <i data-lucide="calendar-days" class="w-4 h-4 text-[#FF3B30]" aria-hidden="true"></i>
+            </div>
+            <span class="text-xs text-[#A0A0A5] font-medium">30 Hari</span>
+          </div>
+          <p class="text-2xl font-bold text-[#FF3B30]">-142</p>
+          <p class="text-xs text-[#A0A0A5] mt-1">Rp 12.4jt</p>
+        </div>
+        <div class="card p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-9 h-9 rounded-lg bg-[#34C759]/15 grid place-items-center">
+              <i data-lucide="trending-up" class="w-4 h-4 text-[#34C759]" aria-hidden="true"></i>
+            </div>
+            <span class="text-xs text-[#A0A0A5] font-medium">Laba 30 Hari</span>
+          </div>
+          <p class="text-2xl font-bold text-[#34C759]">Rp 4.2jt</p>
+          <p class="text-xs text-[#A0A0A5] mt-1">Margin 34%</p>
+        </div>
       </div>
 
       <div class="card overflow-hidden">
@@ -207,48 +255,56 @@
         <table class="w-full text-sm">
           <thead class="bg-white/[0.02] border-b border-white/5">
             <tr class="text-left text-[#A0A0A5]">
-              <th class="px-5 py-3 font-medium text-xs uppercase tracking-wider">Waktu</th>
-              <th class="px-5 py-3 font-medium text-xs uppercase tracking-wider">User</th>
-              <th class="px-5 py-3 font-medium text-xs uppercase tracking-wider">Aksi</th>
-              <th class="px-5 py-3 font-medium text-xs uppercase tracking-wider">Target</th>
-              <th class="px-5 py-3 font-medium text-xs uppercase tracking-wider">IP</th>
+              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">No. Resi</th>
+              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">Tanggal</th>
+              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">Barang</th>
+              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">Channel</th>
+              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">Kurir</th>
+              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">Kasir</th>
+              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider text-right">Jumlah</th>
+              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider text-right">Total</th>
+              <th class="px-4 py-3 w-16"></th>
             </tr>
           </thead>
           <tbody>
             <tr class="table-row border-b border-white/5">
-              <td class="px-5 py-3.5 font-mono text-xs text-[#A0A0A5]">30 Sep 14:25:03</td>
-              <td class="px-5 py-3.5">Mr David</td>
-              <td class="px-5 py-3.5"><span class="badge bg-[#34C759]/15 text-[#34C759]">CREATE</span></td>
-              <td class="px-5 py-3.5">Barang "Tesee2"</td>
-              <td class="px-5 py-3.5 text-[#A0A0A5] font-mono text-xs">192.168.1.5</td>
+              <td class="px-4 py-3.5 font-mono text-xs text-[#A0A0A5]">SPX-001234567</td>
+              <td class="px-4 py-3.5 text-[#A0A0A5]">29 Sep 16:40</td>
+              <td class="px-4 py-3.5 font-medium">Pakan Hikari 100g</td>
+              <td class="px-4 py-3.5"><span class="badge bg-[#EE4D2D]/15 text-[#EE4D2D]">Shopee</span></td>
+              <td class="px-4 py-3.5">SPX</td>
+              <td class="px-4 py-3.5">Staff Satu</td>
+              <td class="px-4 py-3.5 text-right text-[#FF3B30] font-semibold">-5</td>
+              <td class="px-4 py-3.5 text-right font-semibold">Rp 325.000</td>
+              <td class="px-4 py-3.5">
+                <button data-action="detail" aria-label="Lihat detail" class="p-1.5 hover:bg-white/5 rounded-lg text-[#32ADE6]"><i data-lucide="eye" class="w-4 h-4" aria-hidden="true"></i></button>
+              </td>
             </tr>
             <tr class="table-row border-b border-white/5">
-              <td class="px-5 py-3.5 font-mono text-xs text-[#A0A0A5]">30 Sep 13:12:47</td>
-              <td class="px-5 py-3.5">Staff Satu</td>
-              <td class="px-5 py-3.5"><span class="badge bg-[#0088CC]/15 text-[#32ADE6]">UPDATE</span></td>
-              <td class="px-5 py-3.5">Stok Filter Canister: 4 → 5</td>
-              <td class="px-5 py-3.5 text-[#A0A0A5] font-mono text-xs">192.168.1.8</td>
-            </tr>
-            <tr class="table-row border-b border-white/5">
-              <td class="px-5 py-3.5 font-mono text-xs text-[#A0A0A5]">30 Sep 12:45:22</td>
-              <td class="px-5 py-3.5">Mr David</td>
-              <td class="px-5 py-3.5"><span class="badge bg-[#FF9500]/15 text-[#FF9500]">LOGIN</span></td>
-              <td class="px-5 py-3.5">Device baru (Safari MacBook)</td>
-              <td class="px-5 py-3.5 text-[#A0A0A5] font-mono text-xs">192.168.1.5</td>
-            </tr>
-            <tr class="table-row border-b border-white/5">
-              <td class="px-5 py-3.5 font-mono text-xs text-[#A0A0A5]">30 Sep 11:20:15</td>
-              <td class="px-5 py-3.5">Staff Satu</td>
-              <td class="px-5 py-3.5"><span class="badge bg-[#FF3B30]/15 text-[#FF3B30]">DELETE</span></td>
-              <td class="px-5 py-3.5">Transaksi #TRX-0032 (dibatalkan)</td>
-              <td class="px-5 py-3.5 text-[#A0A0A5] font-mono text-xs">192.168.1.8</td>
+              <td class="px-4 py-3.5 font-mono text-xs text-[#A0A0A5]">INV-20260928-001</td>
+              <td class="px-4 py-3.5 text-[#A0A0A5]">28 Sep 11:20</td>
+              <td class="px-4 py-3.5 font-medium">Filter Canister 1000L/h</td>
+              <td class="px-4 py-3.5"><span class="badge bg-[#0088CC]/15 text-[#32ADE6]">Offline</span></td>
+              <td class="px-4 py-3.5">—</td>
+              <td class="px-4 py-3.5">Mr David</td>
+              <td class="px-4 py-3.5 text-right text-[#FF3B30] font-semibold">-1</td>
+              <td class="px-4 py-3.5 text-right font-semibold">Rp 1.250.000</td>
+              <td class="px-4 py-3.5">
+                <button data-action="detail" aria-label="Lihat detail" class="p-1.5 hover:bg-white/5 rounded-lg text-[#32ADE6]"><i data-lucide="eye" class="w-4 h-4" aria-hidden="true"></i></button>
+              </td>
             </tr>
             <tr class="table-row">
-              <td class="px-5 py-3.5 font-mono text-xs text-[#A0A0A5]">30 Sep 09:15:33</td>
-              <td class="px-5 py-3.5">Follikein</td>
-              <td class="px-5 py-3.5"><span class="badge bg-[#FF9500]/15 text-[#FF9500]">LOGIN</span></td>
-              <td class="px-5 py-3.5">Login berhasil</td>
-              <td class="px-5 py-3.5 text-[#A0A0A5] font-mono text-xs">192.168.1.12</td>
+              <td class="px-4 py-3.5 font-mono text-xs text-[#A0A0A5]">TKP-987654321</td>
+              <td class="px-4 py-3.5 text-[#A0A0A5]">28 Sep 09:15</td>
+              <td class="px-4 py-3.5 font-medium">Thermometer Digital</td>
+              <td class="px-4 py-3.5"><span class="badge bg-[#42B549]/15 text-[#42B549]">Tokopedia</span></td>
+              <td class="px-4 py-3.5">JNE</td>
+              <td class="px-4 py-3.5">Staff Satu</td>
+              <td class="px-4 py-3.5 text-right text-[#FF3B30] font-semibold">-2</td>
+              <td class="px-4 py-3.5 text-right font-semibold">Rp 50.000</td>
+              <td class="px-4 py-3.5">
+                <button data-action="detail" aria-label="Lihat detail" class="p-1.5 hover:bg-white/5 rounded-lg text-[#32ADE6]"><i data-lucide="eye" class="w-4 h-4" aria-hidden="true"></i></button>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -299,11 +355,11 @@
      role="status" aria-live="polite"></div>
 
 <!-- Scripts (defer agar DOM siap lebih dulu) -->
-<script src="../assets/js/utils.js" defer></script>
-<script src="../assets/js/navigation.js" defer></script>
-<script src="../assets/js/charts.js" defer></script>
-<script src="../assets/js/animations.js" defer></script>
-<script src="../assets/js/app.js" defer></script>
-<script src="../assets/js/mock-actions.js" defer></script>
+<script src="../../assets/js/utils.js" defer></script>
+<script src="../../assets/js/navigation.js" defer></script>
+<script src="../../assets/js/charts.js" defer></script>
+<script src="../../assets/js/animations.js" defer></script>
+<script src="../../assets/js/app.js" defer></script>
+<script src="../../assets/js/mock-actions.js" defer></script>
 </body>
 </html>

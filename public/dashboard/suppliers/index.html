@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>aQuaStock Pro — Retur</title>
+<title>aQuaStock Pro — Supplier</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐠</text></svg>">
 
 <!-- CDN: Tailwind, Lucide, Chart.js -->
@@ -12,11 +12,11 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <!-- Styles -->
-<link rel="stylesheet" href="../assets/css/main.css">
-<link rel="stylesheet" href="../assets/css/components.css">
-<link rel="stylesheet" href="../assets/css/layout.css">
-<link rel="stylesheet" href="../assets/css/pages.css">
-<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../../assets/css/main.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/layout.css">
+<link rel="stylesheet" href="../../assets/css/pages.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
 <body class="bg-black text-white antialiased">
 
@@ -190,86 +190,90 @@
       </div>
     </header>
 
-    <!-- ═══════════ RETUR ═══════════ -->
-    <div id="page-return" class="page active p-6 space-y-5">
+    <!-- ═══════════ SUPPLIER ═══════════ -->
+    <div id="page-suppliers" class="page active p-6 space-y-5">
       <div class="flex items-center justify-between">
         <div>
-          <h2 class="text-3xl font-bold tracking-tight">Retur Barang</h2>
-          <p class="text-sm text-[#A0A0A5] mt-1">Barang dikembalikan ke supplier atau dari customer</p>
+          <h2 class="text-3xl font-bold tracking-tight">Supplier</h2>
+          <p class="text-sm text-[#A0A0A5] mt-1">Daftar supplier & riwayat pembelian</p>
         </div>
-        <button data-action="add-return" class="bg-[#0088CC] hover:bg-[#0077BB] px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-lg shadow-[#0088CC]/20 btn">
-          <i data-lucide="plus" class="w-4 h-4" aria-hidden="true"></i> Buat Retur
+        <button data-action="add-supplier" class="bg-[#0088CC] hover:bg-[#0077BB] px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-lg shadow-[#0088CC]/20 btn">
+          <i data-lucide="plus" class="w-4 h-4" aria-hidden="true"></i> Tambah Supplier
         </button>
       </div>
 
       <div class="grid grid-cols-3 gap-4">
         <div class="card p-5">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-9 h-9 rounded-lg bg-[#FF9500]/15 grid place-items-center">
-              <i data-lucide="undo-2" class="w-4 h-4 text-[#FF9500]" aria-hidden="true"></i>
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0088CC] to-[#32ADE6] grid place-items-center">
+              <i data-lucide="factory" class="w-5 h-5 text-white" aria-hidden="true"></i>
             </div>
-            <span class="text-xs text-[#A0A0A5] font-medium">Ke Supplier</span>
+            <span class="badge bg-[#34C759]/15 text-[#34C759]">Aktif</span>
           </div>
-          <p class="text-2xl font-bold text-[#FF9500]">3</p>
-          <p class="text-xs text-[#A0A0A5] mt-1">Bulan ini</p>
+          <p class="font-semibold text-lg">CV Aqua Teknik</p>
+          <p class="text-xs text-[#A0A0A5] mt-1">Jakarta · 0812-3456-7890</p>
+          <div class="mt-4 pt-4 border-t border-white/5 grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-xs text-[#A0A0A5]">Total Beli</p>
+              <p class="font-semibold mt-0.5">Rp 24.5jt</p>
+            </div>
+            <div>
+              <p class="text-xs text-[#A0A0A5]">Transaksi</p>
+              <p class="font-semibold mt-0.5">12</p>
+            </div>
+          </div>
+          <div class="mt-4 flex gap-2">
+            <button data-action="edit" class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Edit</button>
+            <button data-action="detail" class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Detail</button>
+          </div>
         </div>
         <div class="card p-5">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-9 h-9 rounded-lg bg-[#AF52DE]/15 grid place-items-center">
-              <i data-lucide="redo-2" class="w-4 h-4 text-[#AF52DE]" aria-hidden="true"></i>
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#34C759] to-[#28A745] grid place-items-center">
+              <i data-lucide="factory" class="w-5 h-5 text-white" aria-hidden="true"></i>
             </div>
-            <span class="text-xs text-[#A0A0A5] font-medium">Dari Customer</span>
+            <span class="badge bg-[#34C759]/15 text-[#34C759]">Aktif</span>
           </div>
-          <p class="text-2xl font-bold text-[#AF52DE]">2</p>
-          <p class="text-xs text-[#A0A0A5] mt-1">Bulan ini</p>
-        </div>
-        <div class="card p-5">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-9 h-9 rounded-lg bg-[#0088CC]/15 grid place-items-center">
-              <i data-lucide="banknote" class="w-4 h-4 text-[#32ADE6]" aria-hidden="true"></i>
+          <p class="font-semibold text-lg">PT Sumber Pakan</p>
+          <p class="text-xs text-[#A0A0A5] mt-1">Bandung · 0813-9876-5432</p>
+          <div class="mt-4 pt-4 border-t border-white/5 grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-xs text-[#A0A0A5]">Total Beli</p>
+              <p class="font-semibold mt-0.5">Rp 18.2jt</p>
             </div>
-            <span class="text-xs text-[#A0A0A5] font-medium">Nilai Retur</span>
+            <div>
+              <p class="text-xs text-[#A0A0A5]">Transaksi</p>
+              <p class="font-semibold mt-0.5">8</p>
+            </div>
           </div>
-          <p class="text-2xl font-bold">Rp 850rb</p>
-          <p class="text-xs text-[#A0A0A5] mt-1">Bulan ini</p>
+          <div class="mt-4 flex gap-2">
+            <button data-action="edit" class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Edit</button>
+            <button data-action="detail" class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Detail</button>
+          </div>
         </div>
-      </div>
-
-      <div class="card overflow-hidden">
-        <div class="card-table-wrap">
-        <table class="w-full text-sm">
-          <thead class="bg-white/[0.02] border-b border-white/5">
-            <tr class="text-left text-[#A0A0A5]">
-              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">No. Retur</th>
-              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">Tanggal</th>
-              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">Tipe</th>
-              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">Barang</th>
-              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">Alasan</th>
-              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider text-right">Jumlah</th>
-              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="table-row border-b border-white/5">
-              <td class="px-4 py-3.5 font-mono text-xs text-[#A0A0A5]">RT-20260930-001</td>
-              <td class="px-4 py-3.5 text-[#A0A0A5]">30 Sep 2026</td>
-              <td class="px-4 py-3.5"><span class="badge bg-[#FF9500]/15 text-[#FF9500]">Ke Supplier</span></td>
-              <td class="px-4 py-3.5 font-medium">Filter Canister</td>
-              <td class="px-4 py-3.5">Barang rusak</td>
-              <td class="px-4 py-3.5 text-right">2 unit</td>
-              <td class="px-4 py-3.5"><span class="badge bg-[#FFCC00]/15 text-[#FFCC00]">Diproses</span></td>
-            </tr>
-            <tr class="table-row">
-              <td class="px-4 py-3.5 font-mono text-xs text-[#A0A0A5]">RT-20260929-002</td>
-              <td class="px-4 py-3.5 text-[#A0A0A5]">29 Sep 2026</td>
-              <td class="px-4 py-3.5"><span class="badge bg-[#AF52DE]/15 text-[#AF52DE]">Dari Customer</span></td>
-              <td class="px-4 py-3.5 font-medium">Pakan Hikari 100g</td>
-              <td class="px-4 py-3.5">Salah kirim</td>
-              <td class="px-4 py-3.5 text-right">1 pack</td>
-              <td class="px-4 py-3.5"><span class="badge bg-[#34C759]/15 text-[#34C759]">Selesai</span></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="card p-5 opacity-60">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#8E8E93] to-[#636366] grid place-items-center">
+              <i data-lucide="factory" class="w-5 h-5 text-white" aria-hidden="true"></i>
+            </div>
+            <span class="badge bg-[#8E8E93]/15 text-[#A0A0A5]">Nonaktif</span>
+          </div>
+          <p class="font-semibold text-lg">Toko Akuarium Sejahtera</p>
+          <p class="text-xs text-[#A0A0A5] mt-1">Surabaya · 0856-1234-5678</p>
+          <div class="mt-4 pt-4 border-t border-white/5 grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="text-xs text-[#A0A0A5]">Total Beli</p>
+              <p class="font-semibold mt-0.5">Rp 5.4jt</p>
+            </div>
+            <div>
+              <p class="text-xs text-[#A0A0A5]">Transaksi</p>
+              <p class="font-semibold mt-0.5">3</p>
+            </div>
+          </div>
+          <div class="mt-4 flex gap-2">
+            <button data-action="edit" class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Edit</button>
+            <button data-action="detail" class="flex-1 text-xs bg-white/5 hover:bg-white/10 py-2 rounded-lg font-medium transition">Detail</button>
+          </div>
         </div>
       </div>
     </div>
@@ -317,11 +321,11 @@
      role="status" aria-live="polite"></div>
 
 <!-- Scripts (defer agar DOM siap lebih dulu) -->
-<script src="../assets/js/utils.js" defer></script>
-<script src="../assets/js/navigation.js" defer></script>
-<script src="../assets/js/charts.js" defer></script>
-<script src="../assets/js/animations.js" defer></script>
-<script src="../assets/js/app.js" defer></script>
-<script src="../assets/js/mock-actions.js" defer></script>
+<script src="../../assets/js/utils.js" defer></script>
+<script src="../../assets/js/navigation.js" defer></script>
+<script src="../../assets/js/charts.js" defer></script>
+<script src="../../assets/js/animations.js" defer></script>
+<script src="../../assets/js/app.js" defer></script>
+<script src="../../assets/js/mock-actions.js" defer></script>
 </body>
 </html>

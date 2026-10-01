@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>aQuaStock Pro — Barang Masuk</title>
+<title>aQuaStock Pro — Purchase Order</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐠</text></svg>">
 
 <!-- CDN: Tailwind, Lucide, Chart.js -->
@@ -12,11 +12,11 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <!-- Styles -->
-<link rel="stylesheet" href="../assets/css/main.css">
-<link rel="stylesheet" href="../assets/css/components.css">
-<link rel="stylesheet" href="../assets/css/layout.css">
-<link rel="stylesheet" href="../assets/css/pages.css">
-<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../../assets/css/main.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/layout.css">
+<link rel="stylesheet" href="../../assets/css/pages.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
 <body class="bg-black text-white antialiased">
 
@@ -190,74 +190,23 @@
       </div>
     </header>
 
-    <!-- ═══════════ BARANG MASUK ═══════════ -->
-    <div id="page-in" class="page active p-6 space-y-5">
+    <!-- ═══════════ PURCHASE ORDER ═══════════ -->
+    <div id="page-po" class="page active p-6 space-y-5">
       <div class="flex items-center justify-between">
         <div>
-          <h2 class="text-3xl font-bold tracking-tight">Barang Masuk</h2>
-          <p class="text-sm text-[#A0A0A5] mt-1">Riwayat barang masuk dari supplier</p>
+          <h2 class="text-3xl font-bold tracking-tight">Purchase Order</h2>
+          <p class="text-sm text-[#A0A0A5] mt-1">Pesanan pembelian ke supplier</p>
         </div>
-        <div class="flex gap-2">
-          <button data-action="export-pdf" class="bg-[#1C1C1E] hover:bg-white/5 px-4 py-2.5 rounded-xl text-sm font-medium border border-white/5 flex items-center gap-2 transition">
-            <i data-lucide="file-text" class="w-4 h-4" aria-hidden="true"></i> Export PDF
-          </button>
-          <button data-action="bulk-input" class="bg-[#1C1C1E] hover:bg-white/5 px-4 py-2.5 rounded-xl text-sm font-medium border border-white/5 flex items-center gap-2 transition">
-            <i data-lucide="list-plus" class="w-4 h-4" aria-hidden="true"></i> Bulk Input
-          </button>
-          <button data-action="add-in" class="bg-[#0088CC] hover:bg-[#0077BB] px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-lg shadow-[#0088CC]/20 btn">
-            <i data-lucide="plus" class="w-4 h-4" aria-hidden="true"></i> Tambah
-          </button>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-4 gap-4">
-        <div class="card p-5">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-9 h-9 rounded-lg bg-[#34C759]/15 grid place-items-center">
-              <i data-lucide="arrow-down-circle" class="w-4 h-4 text-[#34C759]" aria-hidden="true"></i>
-            </div>
-            <span class="text-xs text-[#A0A0A5] font-medium">Hari Ini</span>
-          </div>
-          <p class="text-2xl font-bold text-[#34C759]">+2</p>
-          <p class="text-xs text-[#A0A0A5] mt-1">Rp 2.1jt</p>
-        </div>
-        <div class="card p-5">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-9 h-9 rounded-lg bg-[#34C759]/15 grid place-items-center">
-              <i data-lucide="calendar" class="w-4 h-4 text-[#34C759]" aria-hidden="true"></i>
-            </div>
-            <span class="text-xs text-[#A0A0A5] font-medium">7 Hari</span>
-          </div>
-          <p class="text-2xl font-bold text-[#34C759]">+15</p>
-          <p class="text-xs text-[#A0A0A5] mt-1">Rp 8.4jt</p>
-        </div>
-        <div class="card p-5">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-9 h-9 rounded-lg bg-[#34C759]/15 grid place-items-center">
-              <i data-lucide="calendar-days" class="w-4 h-4 text-[#34C759]" aria-hidden="true"></i>
-            </div>
-            <span class="text-xs text-[#A0A0A5] font-medium">30 Hari</span>
-          </div>
-          <p class="text-2xl font-bold text-[#34C759]">+42</p>
-          <p class="text-xs text-[#A0A0A5] mt-1">Rp 22.6jt</p>
-        </div>
-        <div class="card p-5">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-9 h-9 rounded-lg bg-[#FFCC00]/15 grid place-items-center">
-              <i data-lucide="clock" class="w-4 h-4 text-[#FFCC00]" aria-hidden="true"></i>
-            </div>
-            <span class="text-xs text-[#A0A0A5] font-medium">Pending PO</span>
-          </div>
-          <p class="text-2xl font-bold text-[#FFCC00]">3</p>
-          <p class="text-xs text-[#A0A0A5] mt-1">Rp 5.8jt</p>
-        </div>
+        <button data-action="add-po" class="bg-[#0088CC] hover:bg-[#0077BB] px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-lg shadow-[#0088CC]/20 btn">
+          <i data-lucide="plus" class="w-4 h-4" aria-hidden="true"></i> Buat PO
+        </button>
       </div>
 
       <div class="flex gap-2 flex-wrap">
-        <button data-action="filter" class="px-4 py-2 rounded-lg bg-[#0088CC] text-sm font-medium">Hari Ini</button>
-        <button data-action="filter" class="px-4 py-2 rounded-lg bg-[#1C1C1E] border border-white/5 text-sm font-medium hover:bg-white/5">7 Hari</button>
-        <button data-action="filter" class="px-4 py-2 rounded-lg bg-[#1C1C1E] border border-white/5 text-sm font-medium hover:bg-white/5">30 Hari</button>
-        <button data-action="filter" class="px-4 py-2 rounded-lg bg-[#1C1C1E] border border-white/5 text-sm font-medium hover:bg-white/5">Semua</button>
+        <button data-action="filter" class="px-4 py-2 rounded-lg bg-[#0088CC] text-sm font-medium">Semua (5)</button>
+        <button data-action="filter" class="px-4 py-2 rounded-lg bg-[#1C1C1E] border border-white/5 text-sm font-medium hover:bg-white/5">Draft (1)</button>
+        <button data-action="filter" class="px-4 py-2 rounded-lg bg-[#1C1C1E] border border-white/5 text-sm font-medium hover:bg-white/5">Dikirim (2)</button>
+        <button data-action="filter" class="px-4 py-2 rounded-lg bg-[#1C1C1E] border border-white/5 text-sm font-medium hover:bg-white/5">Diterima (2)</button>
       </div>
 
       <div class="card overflow-hidden">
@@ -265,55 +214,47 @@
         <table class="w-full text-sm">
           <thead class="bg-white/[0.02] border-b border-white/5">
             <tr class="text-left text-[#A0A0A5]">
-              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">No. Transaksi</th>
+              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">No. PO</th>
               <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">Tanggal</th>
-              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">Barang</th>
               <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">Supplier</th>
-              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">Kasir</th>
-              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider text-right">Jumlah</th>
-              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider text-right">Harga</th>
+              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">Item</th>
+              <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider">Status</th>
               <th class="px-4 py-3 font-medium text-xs uppercase tracking-wider text-right">Total</th>
               <th class="px-4 py-3 w-16"></th>
             </tr>
           </thead>
           <tbody>
             <tr class="table-row border-b border-white/5">
-              <td class="px-4 py-3.5 font-mono text-xs text-[#A0A0A5]">IN-20260930-001</td>
-              <td class="px-4 py-3.5 text-[#A0A0A5]">30 Sep 14:25</td>
-              <td class="px-4 py-3.5 font-medium">Tesee2</td>
-              <td class="px-4 py-3.5">CV Aqua Teknik</td>
-              <td class="px-4 py-3.5">Mr David</td>
-              <td class="px-4 py-3.5 text-right text-[#34C759] font-semibold">+1</td>
-              <td class="px-4 py-3.5 text-right">Rp 850.000</td>
-              <td class="px-4 py-3.5 text-right font-semibold">Rp 850.000</td>
+              <td class="px-4 py-3.5 font-mono text-xs text-[#A0A0A5]">PO-20260930-001</td>
+              <td class="px-4 py-3.5 text-[#A0A0A5]">30 Sep 2026</td>
+              <td class="px-4 py-3.5 font-medium">CV Aqua Teknik</td>
+              <td class="px-4 py-3.5">5 item</td>
+              <td class="px-4 py-3.5"><span class="badge bg-[#0088CC]/15 text-[#32ADE6]">Dikirim</span></td>
+              <td class="px-4 py-3.5 text-right font-semibold">Rp 4.250.000</td>
               <td class="px-4 py-3.5">
-                <button data-action="detail" aria-label="Lihat detail" class="p-1.5 hover:bg-white/5 rounded-lg text-[#32ADE6]"><i data-lucide="eye" class="w-4 h-4" aria-hidden="true"></i></button>
+                <button data-action="detail" aria-label="Lihat PO" class="p-1.5 hover:bg-white/5 rounded-lg text-[#32ADE6]"><i data-lucide="eye" class="w-4 h-4" aria-hidden="true"></i></button>
               </td>
             </tr>
             <tr class="table-row border-b border-white/5">
-              <td class="px-4 py-3.5 font-mono text-xs text-[#A0A0A5]">IN-20260930-002</td>
-              <td class="px-4 py-3.5 text-[#A0A0A5]">30 Sep 13:12</td>
-              <td class="px-4 py-3.5 font-medium">Filter Canister 1000L/h</td>
-              <td class="px-4 py-3.5">CV Aqua Teknik</td>
-              <td class="px-4 py-3.5">Staff Satu</td>
-              <td class="px-4 py-3.5 text-right text-[#34C759] font-semibold">+1</td>
-              <td class="px-4 py-3.5 text-right">Rp 850.000</td>
-              <td class="px-4 py-3.5 text-right font-semibold">Rp 850.000</td>
+              <td class="px-4 py-3.5 font-mono text-xs text-[#A0A0A5]">PO-20260929-002</td>
+              <td class="px-4 py-3.5 text-[#A0A0A5]">29 Sep 2026</td>
+              <td class="px-4 py-3.5 font-medium">PT Sumber Pakan</td>
+              <td class="px-4 py-3.5">3 item</td>
+              <td class="px-4 py-3.5"><span class="badge bg-[#34C759]/15 text-[#34C759]">Diterima</span></td>
+              <td class="px-4 py-3.5 text-right font-semibold">Rp 2.100.000</td>
               <td class="px-4 py-3.5">
-                <button data-action="detail" aria-label="Lihat detail" class="p-1.5 hover:bg-white/5 rounded-lg text-[#32ADE6]"><i data-lucide="eye" class="w-4 h-4" aria-hidden="true"></i></button>
+                <button data-action="detail" aria-label="Lihat PO" class="p-1.5 hover:bg-white/5 rounded-lg text-[#32ADE6]"><i data-lucide="eye" class="w-4 h-4" aria-hidden="true"></i></button>
               </td>
             </tr>
             <tr class="table-row">
-              <td class="px-4 py-3.5 font-mono text-xs text-[#A0A0A5]">IN-20260929-003</td>
-              <td class="px-4 py-3.5 text-[#A0A0A5]">29 Sep 10:15</td>
-              <td class="px-4 py-3.5 font-medium">Lampu LED Aquascape 60cm</td>
-              <td class="px-4 py-3.5">PT Sumber Pakan</td>
-              <td class="px-4 py-3.5">Mr David</td>
-              <td class="px-4 py-3.5 text-right text-[#34C759] font-semibold">+2</td>
-              <td class="px-4 py-3.5 text-right">Rp 450.000</td>
-              <td class="px-4 py-3.5 text-right font-semibold">Rp 900.000</td>
+              <td class="px-4 py-3.5 font-mono text-xs text-[#A0A0A5]">PO-20260928-003</td>
+              <td class="px-4 py-3.5 text-[#A0A0A5]">28 Sep 2026</td>
+              <td class="px-4 py-3.5 font-medium">CV Aqua Teknik</td>
+              <td class="px-4 py-3.5">2 item</td>
+              <td class="px-4 py-3.5"><span class="badge bg-[#8E8E93]/15 text-[#A0A0A5]">Draft</span></td>
+              <td class="px-4 py-3.5 text-right font-semibold">Rp 1.250.000</td>
               <td class="px-4 py-3.5">
-                <button data-action="detail" aria-label="Lihat detail" class="p-1.5 hover:bg-white/5 rounded-lg text-[#32ADE6]"><i data-lucide="eye" class="w-4 h-4" aria-hidden="true"></i></button>
+                <button data-action="detail" aria-label="Lihat PO" class="p-1.5 hover:bg-white/5 rounded-lg text-[#32ADE6]"><i data-lucide="eye" class="w-4 h-4" aria-hidden="true"></i></button>
               </td>
             </tr>
           </tbody>
@@ -365,11 +306,11 @@
      role="status" aria-live="polite"></div>
 
 <!-- Scripts (defer agar DOM siap lebih dulu) -->
-<script src="../assets/js/utils.js" defer></script>
-<script src="../assets/js/navigation.js" defer></script>
-<script src="../assets/js/charts.js" defer></script>
-<script src="../assets/js/animations.js" defer></script>
-<script src="../assets/js/app.js" defer></script>
-<script src="../assets/js/mock-actions.js" defer></script>
+<script src="../../assets/js/utils.js" defer></script>
+<script src="../../assets/js/navigation.js" defer></script>
+<script src="../../assets/js/charts.js" defer></script>
+<script src="../../assets/js/animations.js" defer></script>
+<script src="../../assets/js/app.js" defer></script>
+<script src="../../assets/js/mock-actions.js" defer></script>
 </body>
 </html>
