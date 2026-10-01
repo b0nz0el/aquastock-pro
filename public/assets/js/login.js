@@ -116,7 +116,7 @@
 
           // 6. Redirect setelah splash tampil 1.5 detik
           setTimeout(() => {
-            window.location.href = 'dashboard/index.html';
+            window.location.href = '../dashboard/';
           }, 1500);
         }, 300);
       }, 500);

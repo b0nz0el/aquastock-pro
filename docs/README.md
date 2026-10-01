@@ -51,6 +51,6 @@ Semua script dimuat dengan `defer` agar DOM siap lebih dulu.
    `components.css` karena terikat ke `.card`.
 5. **`@supports` fallback iOS** ditempatkan di `responsive.css` bersama semua
    `@media` (karena ia fallback untuk layout mobile).
-6. **`login.html` memuat `main.css` + `components.css` + `login.css`** sesuai
+6. **`login/index.html` memuat `main.css` + `components.css` + `login.css`** sesuai
    instruksi. Ini menambahkan `:focus-visible` (hanya tampil saat navigasi
    keyboard) — tidak mengubah tampilan saat klik mouse.

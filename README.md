@@ -28,7 +28,7 @@ dihubungkan ke backend.
 aquastock/
 ├── public/                     # Root web (di-serve ke browser)
 │   ├── index.html              # Redirect ke login
-│   ├── login.html              # Halaman login
+│   ├── login/index.html        # Halaman login    → /login/
 │   ├── 404.html                # Halaman error
 │   │
 │   ├── dashboard/              # 16 halaman aplikasi (clean URL)
@@ -117,7 +117,7 @@ php -S localhost:8000 -t public
 > ⚠️ Jangan buka file HTML langsung lewat `file://` — aset relatif & CDN bisa
 > diblokir browser. Selalu jalankan lewat server lokal di atas.
 
-**Alur:** `public/index.html` → redirect ke `login.html` → setelah login →
+**Alur:** `public/index.html` → redirect ke `login/` → setelah login →
 `dashboard/`. Perpindahan antar modul memakai **clean URL** (multi-page):
 `showPage('items')` mengarahkan ke `/dashboard/items/` — tanpa ekstensi `.html`.
 
